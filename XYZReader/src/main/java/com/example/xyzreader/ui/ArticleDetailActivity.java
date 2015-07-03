@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.xyzreader.R;
@@ -64,7 +65,16 @@ public class ArticleDetailActivity extends AppCompatActivity
                 mSelectedItemId = mStartId;
             }
         }
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override
@@ -119,5 +129,12 @@ public class ArticleDetailActivity extends AppCompatActivity
         public int getCount() {
             return (mCursor != null) ? mCursor.getCount() : 0;
         }
+
+//        @Override
+//        public void destroyItem(ViewGroup container, int position, Object object) {
+//            // TODO Auto-generated method stub
+//            ((ViewPager) container).removeView((View) object);
+//        }
     }
+
 }

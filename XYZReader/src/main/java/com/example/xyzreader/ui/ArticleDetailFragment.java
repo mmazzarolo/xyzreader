@@ -108,6 +108,11 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        bindViews();
+    }
 
     private void bindViews() {
         if (mRootView == null) {
